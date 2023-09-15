@@ -2,16 +2,14 @@ const express = require ('express')
 
 const app = express()
 app.get('/',(request, response) => {
-    response.send ('hola demonio')
-})
-app.get('/',(request, response) => {
     response.send ('hola get')
 })
+
 app.post('/',(request, response) => {
-    response.send ('hola post day')
+    response.send ('hola post ')
 })
 app.put('/',(request, response) => {
-    response.send ('hola put*')
+    response.send ('hola put')
 })
 app.patch('/',(request, response) => {
     response.send ('hola patch')
