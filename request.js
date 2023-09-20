@@ -9,7 +9,7 @@ app.get('/:user/:password', (req, res)=> {
         res.json({msg: 'Inicio de sesión exitoso'})
         return
     }
-    res.json ({msg:'Error en el usuario o la contraseña' })
+    res.json ({msg:'Error en el usuario o la contraseña holqs' })
 })
 
 // http://localhost:3000/login?user=alan&password=123
