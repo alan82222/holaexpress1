@@ -2,27 +2,29 @@ const express = require ('express')
 
 const app = express()
 
-// localhost:3000/julio/123
-
-app.get('/:user/:password',(req, ress) => {
-   const {user, password} = req.params
-   if (user === 'julio' && password ==='123'){
-    response.json({msg: 'Inicio de sesion correcto'})
-   }
-
-   res.status(400).json({msg: 'Fallo inicio'})
-      
+app.get('/:user/:password', (req, res)=> {
+    const {user, password} = req.params
+     
+    if (user === 'alan' && password === '123' )  {
+        res.json({msg: 'Inicio de sesión exitoso'})
+        return
+    }
+    res.json ({msg:'Error en el usuario o la contraseña' })
 })
 
+app.post('/', (req, res)=> {res.json({msg:'Hello POST'})})
+app.put('/', (req, res)=> {res.json({msg:'Hello PUT'})})
+app.patch('/', (req, res)=> {res.json({msg:'Hello PATCH'})})
+app.delete('/', (req, res)=> {res.json({msg:'Hello DELETE'})})
 
+/*
+*
+*
+*     
+*
+*/
+//http://localhost:3000/user
 
-/**
- * 
- * 
- * 
- *  Funcionalidad
- */
-//http://localhost:3000
-app.listen(3000, () => {
-    console.log('listening on port 3000aaaaa')
+app.listen(3000,()=>{
+    console.log('listening on port 3000')
 })
