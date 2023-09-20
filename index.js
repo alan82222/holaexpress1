@@ -1,22 +1,19 @@
 const express = require ('express')
 
 const app = express()
-app.get('/',(request, response) => {
-    response.send ('hola get')
+
+// localhost:3000/julio/123
+
+app.get('/:user/:password',(req, ress) => {
+   const {user, password} = req.params
+   if (user === 'julio' && password ==='123'){
+    response.json({msg: 'Inicio de sesion correcto'})
+   }
+
+   res.status(400).json({msg: 'Fallo inicio'})
+      
 })
 
-app.post('/',(request, response) => {
-    response.send ('hola post ')
-})
-app.put('/',(request, response) => {
-    response.send ('hola put')
-})
-app.patch('/',(request, response) => {
-    response.send ('hola patch')
-})
-app.delete('/',(request, response) => {
-    response.send ('hola borrar')
-})
 
 
 /**
